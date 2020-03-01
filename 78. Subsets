@@ -1,0 +1,10 @@
+分治
+https://leetcode.com/problems/subsets/discuss/27356/5-lines-of-python
+
+class Solution(object):
+    def subsets(self, nums):
+        nums.sort()
+        result = [[]]
+        for num in nums:
+            result += [i + [num] for i in result]
+        return result
